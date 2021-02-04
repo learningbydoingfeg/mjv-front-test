@@ -6,7 +6,7 @@ const Product = (props) => {
   const { product } = props
   return (
     <div key={product._id} className="product">
-      <div><img src={product.image} alt="product-painting" /></div>
+      <div style={{width:'100%'}}><img src={product.image} className="product-image" alt="product-painting" /></div>
       <span>{product.name}</span>
       <span>${product.price}</span>
       <span>{product.description}</span>

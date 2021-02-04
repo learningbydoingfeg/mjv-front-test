@@ -22,13 +22,10 @@ const Home = () => {
 
   }, [])
 
-
-
   const getUserId = async () => {
     let userId = await localStorage.getItem('user');
     loadUserData(userId);
   }
-
 
   const loadUserData = async (userId) => {
 
@@ -80,10 +77,7 @@ const Home = () => {
             )
           })}
         </div>
-      </div>
-      <div className="footer">
-        MJV - Job - Test - Felipe Estrada - 2021
-      </div>
+      </div> 
     </>
   )
 }
