@@ -8,7 +8,7 @@ const SignIn = () => {
   const [password, setPassword] = useState('')
 
   const sendData = async (payload) => {
-    let result = await axios({
+     await axios({
       method: 'POST',
       baseURL: process.env.REACT_APP_SERVER_URL,
       url: '/users/signin',

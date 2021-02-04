@@ -10,24 +10,26 @@ const SignUp = () => {
 
 
   const sendData = async (payload) => {
-    let result = await axios({
-
-      method: 'POST',
-      baseURL: process.env.REACT_APP_SERVER_URL,
-      url: '/users/signup',
-      data: payload
-    })
-      .then(({ data }) => {
-
-        localStorage.setItem('token', data.token)
-        localStorage.setItem('user', data.user._id)
-
+    if (password === password_confirmation){
+      await axios({
+        method: 'POST',
+        baseURL: process.env.REACT_APP_SERVER_URL,
+        url: '/users/signup',
+        data: payload
       })
-      .catch(function (err) {
-        console.log(err)
-      })
-
-    history.push('/')
+        .then(({ data }) => {
+  
+          localStorage.setItem('token', data.token)
+          localStorage.setItem('user', data.user._id)
+  
+        })
+        .catch(function (err) {
+          console.log(err)
+        })
+  
+      history.push('/')
+    }
+    
   }
 
 

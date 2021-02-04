@@ -35,7 +35,7 @@ const Product = () => {
   return (
     <div className="ProductDetail">
     <Link to={'/'} ><div className="back-btn">Volver</div></Link>
-      <div><img src={image} alt="product-image" /></div>
+      <div><img src={image} alt="product" /></div>
       <span>name: {name}</span>
       <span>description: {description}</span>
       <span>price: ${price}</span>

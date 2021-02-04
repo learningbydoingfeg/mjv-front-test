@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
-
+import Product from '../components/Product'
 import Loading from '../components/Loading'
 
 const Home = () => {
@@ -42,57 +42,50 @@ const Home = () => {
       setIsAdmin(true)
     }
 
-  setUser(result.data)
-}
+    setUser(result.data)
+  }
 
-const loadProducts = async () => {
+  const loadProducts = async () => {
 
-  let result = await axios({
-    method: 'GET',
-    baseURL: process.env.REACT_APP_SERVER_URL,
-    url: '/products',
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
-    }
-  })
-  setProducts(result.data)
-}
+    let result = await axios({
+      method: 'GET',
+      baseURL: process.env.REACT_APP_SERVER_URL,
+      url: '/products',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      }
+    })
+    setProducts(result.data)
+  }
 
-const handleLogOut = (e) => {
-  e.preventDefault();
-  localStorage.clear();
-  history.push('/signin')
-}
+  const handleLogOut = (e) => {
+    e.preventDefault();
+    localStorage.clear();
+    history.push('/signin')
+  }
 
 
-return (loading ? <Loading /> :
-  <>
-    <div className="header">
-      Current User: {user.email}
-      <button onClick={handleLogOut}>Cerrar Sesión</button>
-      { isAdmin && <Link to='/admin'><button>Crear productos</button></Link>}
-    </div>
-    <div className="content">
-      <div className="products-container">
-        {products.map((product) => {
-          return (
-            <div key={product.id} className="product">
-              <div><img src={product.image} alt="product-image" /></div>
-              <span>{product.name}</span>
-              <span>${product.price}</span>
-              <span>{product.description}</span>
-              <Link to={`/product/${product._id}`}><button>Ver más</button></Link>
-              
-            </div>
-          )
-        })}
+  return (loading ? <Loading /> :
+    <>
+      <div className="header">
+        Current User: {user.email}
+        <button onClick={handleLogOut}>Cerrar Sesión</button>
+        {isAdmin && <Link to='/admin'><button>Crear productos</button></Link>}
       </div>
-    </div>
-    <div className="footer">
-      MJV - Job - Test - Felipe Estrada - 2021
+      <div className="content">
+        <div className="products-container">
+          {products.map((product) => {
+            return (
+              <Product key={product._id} product={product} />
+            )
+          })}
+        </div>
       </div>
-  </>
-)
+      <div className="footer">
+        MJV - Job - Test - Felipe Estrada - 2021
+      </div>
+    </>
+  )
 }
 
 export default Home
