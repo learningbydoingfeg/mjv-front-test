@@ -11,7 +11,7 @@ const SignUp = () => {
 
   const sendData = async (payload) => {
     if (password === password_confirmation){
-      await axios({
+      let result = await axios({
         method: 'POST',
         baseURL: process.env.REACT_APP_SERVER_URL,
         url: '/users/signup',
