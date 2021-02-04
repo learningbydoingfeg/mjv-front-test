@@ -10,7 +10,7 @@ const SignUp = () => {
 
 
   const sendData = async (payload) => {
-    if (password === password_confirmation){
+    
       let result = await axios({
         method: 'POST',
         baseURL: process.env.REACT_APP_SERVER_URL,
@@ -28,7 +28,6 @@ const SignUp = () => {
         })
   
       history.push('/')
-    }
     
   }
 
