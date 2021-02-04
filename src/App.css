@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+
+
+.header{
+  height:5vh;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer{
+  height:5vh;
+  background-color: aliceblue;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content{
+  height:90vh;
+  width:100%;
+  overflow: scroll;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.products-container{
+  padding:1% 4%;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.product{
+  padding:0.3em 0.3em;
+  margin:1em;
+  width:calc(80% / 3);
+  height:300px;
+  border-radius: 12px;
+  box-shadow: 0 0 4px #dedede;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
+}
+
+.admin-panel{
+  height:100vh;
+  width:100vw;
+  display:flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.formbox{
+  display:flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ProductDetail{
+  width:100vw;
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container{
+  width:60%;
+  margin:auto;
+
+}
+
+.full-center{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+
+.logapp{
+  height:100vh;
+  width: 100vw;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+
+.back-btn{
+  position:absolute;
+  top:10px;
+  left:10px;
 }
