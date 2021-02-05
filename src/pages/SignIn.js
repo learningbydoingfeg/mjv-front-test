@@ -39,7 +39,7 @@ const SignIn = () => {
   }
 
   return (
-    <div className="logapp">
+    <div className="LogInContainer">
       <div className="form-container">
         iniciar sesión
       <form onSubmit={formSubmit} className="formbox">

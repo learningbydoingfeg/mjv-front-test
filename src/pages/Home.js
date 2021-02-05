@@ -65,9 +65,9 @@ const Home = () => {
   return (loading ? <Loading /> :
     <>
       <div className="header">
-        Current User: {user.email}
-        <button onClick={handleLogOut}>Cerrar Sesión</button>
-        {isAdmin && <Link to='/admin'><button>Crear productos</button></Link>}
+        Current User:<br/>{user.email}
+        <button className="header-button" onClick={handleLogOut}>Cerrar<br/>Sesión</button>
+        {isAdmin && <Link to='/admin'><button className="header-button">Crear<br/>productos</button></Link>}
       </div>
       <div className="content">
         <div className="products-container">

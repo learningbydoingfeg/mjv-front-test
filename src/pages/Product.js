@@ -4,10 +4,10 @@ import { useParams, Link } from "react-router-dom";
 
 const Product = () => {
 
-  const [ price, setPrice ] = useState('')
-  const [ description, setDescription ] = useState('')
-  const [ name, setName ] = useState('')
-  const [ image, setImage ] = useState('')
+  const [price, setPrice] = useState('')
+  const [description, setDescription] = useState('')
+  const [name, setName] = useState('')
+  const [image, setImage] = useState('')
   let { id } = useParams();
 
   const getData = async () => {
@@ -34,12 +34,13 @@ const Product = () => {
 
   return (
     <div className="ProductDetail">
-    <Link to={'/'} ><div className="back-btn">Volver</div></Link>
-      <div><img src={image} alt="product" /></div>
-      <span>name: {name}</span>
-      <span>description: {description}</span>
-      <span>price: ${price}</span>
-      
+      <Link to={'/'} ><div className="back-btn header-button">Volver</div></Link>
+      <div className="Product-detail">
+        <div><img src={image} alt="product" /></div>
+        <span className="product-name">{name}</span>
+        <span className="product-description">{description}</span>
+        <span className="price">${price}</span>
+      </div>
     </div>
   )
 }
