@@ -4,7 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Setting up the project.
 
 1. To run this project you must use `npm i` and wait the dependencies to be installed.
-2. To setup the project you must define the api url on a .env file on project root use: REACT_APP_SERVER_URL= 'https://guarded-taiga-76691.herokuapp.com'
+2. To setup the project you must define the api url on a .env file on project root use: 
+* `REACT_APP_SERVER_URL= 'https://guarded-taiga-76691.herokuapp.com'`
 3. You can explore a live version of this project on https://mjv-front-test.felipeestradagomez.vercel.app
 4. This project gets users and products from 'https://guarded-taiga-76691.herokuapp.com'
 
